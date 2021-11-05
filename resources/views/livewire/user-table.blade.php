@@ -49,9 +49,14 @@
                                     {{ $user->role }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <button class="rounded px-2 py-2 text-black-300 bg-yellow-400">Editer</button>
+                                    <button class="rounded px-2 py-2 text-black-300 bg-yellow-400" wire:click="starEdit({{$user->id}})">Editer</button>
                                 </td>
                             </tr>
+                            @if($editId === $user->id)
+                                <tr>
+                                    <livewire:user-form :user="$user"/>
+                                </tr>
+                            @endif
                         @endforeach
                     @endif
                     <!-- More people... -->
