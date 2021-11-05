@@ -15,7 +15,11 @@ class UserForm extends Component
 
     public function mount(User $user)
     {
-       $this->userName= $user->name;
+    }
+
+    public function save()
+    {
+        $this->validate();
     }
 
     public function render()
