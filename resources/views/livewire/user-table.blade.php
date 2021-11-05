@@ -13,13 +13,12 @@
                         <x-table-header :direction="$orderDirection" label="Status" name="status" :field="$orderField"  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></x-table-header>
                         <x-table-header :direction="$orderDirection" label="role" name="role" :field="$orderField"  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></x-table-header>
                         <th scope="col" class="relative px-6 py-3">
-                            <span class="sr-only">Edit</span>
+                            Action
                         </th>
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                     @if($users->isNotEmpty())
-
                         @foreach($users as $user)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
@@ -50,7 +49,7 @@
                                     {{ $user->role }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                    <button class="rounded px-2 py-2 text-black-300 bg-yellow-400">Editer</button>
                                 </td>
                             </tr>
                         @endforeach
