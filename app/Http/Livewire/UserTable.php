@@ -14,11 +14,16 @@ class UserTable extends Component
     public $orderField= 'name';
     public  $orderDirection = 'ASC';
     protected $tableProperty = ['name', 'email', 'role'];
+    public $editId = 0;
 
     protected  $queryString = [
         'search' => ['except'=>''],
     ];
 
+    public function starEdit(int $Id)
+    {
+       $this->editId = $Id;
+    }
     public function setOrderField(string $name)
     {
 
