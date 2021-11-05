@@ -15,13 +15,11 @@ class UserForm extends Component
 
     public function mount(User $user)
     {
-
     }
 
     public function save()
     {
         $this->validate();
-
     }
 
     public function render()
