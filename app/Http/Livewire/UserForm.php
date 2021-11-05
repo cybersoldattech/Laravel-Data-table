@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
 use App\Models\User;
+use Livewire\Component;
 
 class UserForm extends Component
 {
     public $userName;
 
-    protected  $rules =[
+    protected $rules = [
         'userName' => 'required|min:3|string',
     ];
 
@@ -24,7 +24,6 @@ class UserForm extends Component
 
     public function render()
     {
-
         return view('livewire.user-form');
     }
 }

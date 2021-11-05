@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('number')->unique();
-            $table->enum('status',['success','pending','cancel','fail'])->default('pending');
+            $table->enum('status', ['success', 'pending', 'cancel', 'fail'])->default('pending');
             $table->unsignedInteger('total_value');
             $table->unsignedInteger('taxes');
             $table->unsignedInteger('shipping_charges');

@@ -11,15 +11,15 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected  $guarded=[];
+    protected $guarded = [];
 
-    public function ScopeFilter(Builder $builder,$request,array  $filters = []){
-
+    public function ScopeFilter(Builder $builder, $request, array $filters = [])
+    {
         return (new CourseFilters($request))->add($filters)->filter($builder);
-
-    }
-    public function subjects(){
-        return $this->morphToMany(Subject::class,'subjectable');
     }
 
+    public function subjects()
+    {
+        return $this->morphToMany(Subject::class, 'subjectable');
+    }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class AccessFilter
 {
-    public function mappings ()
+    public function mappings()
     {
         return [
             'free' => true,
@@ -14,10 +14,10 @@ class AccessFilter
         ];
     }
 
-    public function  filter(Builder $builder,$value)
+    public function filter(Builder $builder, $value)
     {
         $value = ($value == 'free' ? true : false);
 
-        return $builder->where('free',$value);
+        return $builder->where('free', $value);
     }
 }

@@ -1,14 +1,15 @@
 <?php
+
 namespace App\Filters;
+
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
-abstract  class FilterAbstract
+abstract class FilterAbstract
 {
+    protected $request;
 
-    protected  $request;
-
-    protected  $filters = [];
+    protected $filters = [];
 
     public function __construct(Request $request)
     {
@@ -17,30 +18,32 @@ abstract  class FilterAbstract
 
     public function filter(Builder $builder)
     {
-          foreach ($this->getFilters() as $filter => $value){
-                $this->resolveFilter($filter)->filter($builder,$value);
-          }
-          return $builder;
+        foreach ($this->getFilters() as $filter => $value) {
+            $this->resolveFilter($filter)->filter($builder, $value);
+        }
+
+        return $builder;
     }
 
     public function add(array $filters)
     {
-        $this->filters=array_merge($this->filters,$filters);
+        $this->filters = array_merge($this->filters, $filters);
+
         return $this;
     }
 
-    protected  function resolveFilter($filter)
+    protected function resolveFilter($filter)
     {
         return new $this->filters[$filter];
     }
 
-    protected  function getFilters(){
+    protected function getFilters()
+    {
         return $this->filterFilters();
     }
 
-    protected  function filterFilters()
+    protected function filterFilters()
     {
         return array_filter($this->request->only(array_keys($this->filters)));
     }
-
 }
