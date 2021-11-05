@@ -20,7 +20,6 @@ class CreateInvoicesTable extends Migration
             $table->unsignedInteger('totalAmount');
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
-
         });
     }
 

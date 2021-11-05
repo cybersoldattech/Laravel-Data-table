@@ -24,9 +24,9 @@ class CourseFactory extends Factory
         return [
             'name'=> $this->faker->titleMale,
             'slug'=> $this->faker->jobTitle(),
-            'free'=> [true,false][rand(0,1)],
-            'difficulty'=> ['beginner','intermediate','advanced'][rand(0,2)],
-            'type'=> ['theory','project','snippet'][rand(0,2)],
+            'free'=> [true, false][rand(0, 1)],
+            'difficulty'=> ['beginner', 'intermediate', 'advanced'][rand(0, 2)],
+            'type'=> ['theory', 'project', 'snippet'][rand(0, 2)],
         ];
     }
 }

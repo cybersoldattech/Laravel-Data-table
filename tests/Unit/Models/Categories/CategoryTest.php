@@ -3,7 +3,6 @@
 namespace Tests\Unit\Models\Categories;
 
 use App\Models\Category;
-use Cassandra\Exception\TruncateException;
 use PHPUnit\Framework\TestCase;
 
 class CategoryTest extends TestCase
@@ -15,7 +14,6 @@ class CategoryTest extends TestCase
      */
     public function test_it_many_children()
     {
-
-       $categories=Category::factory(10)->create();
+        $categories = Category::factory(10)->create();
     }
 }

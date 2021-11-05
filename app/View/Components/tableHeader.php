@@ -14,11 +14,10 @@ class tableHeader extends Component
      *
      * @return void
      */
-    public function __construct(string $direction , string $name , string $label , string $field)
+    public function __construct(string $direction, string $name, string $label, string $field)
     {
         $this->name = $name;
-        $this->field=$field;
-
+        $this->field = $field;
     }
 
     /**
@@ -28,7 +27,7 @@ class tableHeader extends Component
      */
     public function render()
     {
-        return view('components.table-header',[
+        return view('components.table-header', [
 
         ]);
     }

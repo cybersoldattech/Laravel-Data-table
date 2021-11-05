@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/',function(){
+Route::get('/', function () {
     $categories = \App\Models\Category::parent()->get();
     dd($categories);
 });
